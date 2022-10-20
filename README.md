@@ -1,5 +1,6 @@
-A ultra-lightweight, pure javascript library which fetches HTTP requests with a standard API.
+An ultra-lightweight, pure javascript library which fetches HTTP requests with a standard API.
 
+**NOTE:** Reqiuires `node -v` >= 18. Or can be used with `--experimental-fetch` flag for  `node -v` = 16.
 ## Installation
 
 ```
