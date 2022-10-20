@@ -15,8 +15,11 @@ const fetchLean = (p_method, p_uri, /* istanbul ignore next */ p_extra_headers =
 	else l_uri += "?" + fetch_add_params(p_body);
 	try {
 		let l_response = await fetch(l_uri, l_init);
-		let l_json = await l_response.json();
-		return resolve(l_json);
+		if (l_headers['Content-Type'] && (l_headers['Content-Type'].toLowerCase() === 'application/json')) {
+			let l_json = await l_response.json();
+			return resolve(l_json);	
+		}
+		return resolve(l_response);
 	} catch (error)  /* istanbul ignore next */ {
 		return reject(error)
 	}
