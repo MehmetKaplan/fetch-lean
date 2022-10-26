@@ -1,7 +1,7 @@
 {
 	"name": "fetch-lean",
 	"description": "A ultra-lightweight, pure javascript library which fetches HTTP requests with a standard API.",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"private": false,
 	"author": "MehmetKaplan",
 	"license": "MIT",

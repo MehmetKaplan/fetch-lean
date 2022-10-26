@@ -10,7 +10,7 @@ yarn add fetch-lean
 ## Usage
 
 ```javascript
-const fetchLean = require('./fetch-lean');
+const fetchLean = require('fetch-lean');
 
 const test = async () => {
 let getResp = await fetchLean('GET', 'http://localhost:8000/get-route', {parameter1: 'parameter 1 value', parameter2: 'parameter 2 value', });
