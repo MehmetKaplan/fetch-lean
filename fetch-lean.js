@@ -6,7 +6,7 @@ function fetch_add_params(p_params_as_json) {
 	return l_retval
 }
 
-const fetchLean = (p_method, p_uri, /* istanbul ignore next */ p_extra_headers = {}, /* istanbul ignore next */ p_body = {},) => new Promise(async (resolve, reject) => {
+const fetchLean = (p_method, p_uri, /* istanbul ignore next */ p_extra_headers = {}, /* istanbul ignore next */ p_body = {}, p_retrieveStatus = false) => new Promise(async (resolve, reject) => {
 	let l_method = p_method.toUpperCase();
 	let l_uri = p_uri;
 	let l_headers = Object.assign({ Accept: 'application/json', 'Content-Type': 'application/json', }, p_extra_headers);
@@ -18,6 +18,7 @@ const fetchLean = (p_method, p_uri, /* istanbul ignore next */ p_extra_headers =
 		let l_response = await fetch(l_uri, l_init);
 		try {
 			let l_response_json = await l_response.json();
+			if (p_retrieveStatus) l_response_json.status = l_response.status;
 			return resolve(l_response_json);
 		} catch (error) {
 			return resolve(l_response);
