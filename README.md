@@ -1,6 +1,7 @@
 An ultra-lightweight, pure javascript library which fetches HTTP requests with a standard API.
 
 **NOTE:** Reqiuires `node -v` >= 18. Or can be used with `--experimental-fetch` flag for  `node -v` = 16.
+
 ## Installation
 
 ```
@@ -31,7 +32,7 @@ test();
 |p_uri| API route, full URI to call|
 |p_extra_headers| A JSON object to identify headers. The default is { Accept: 'application/json', 'Content-Type': 'application/json', } and any provided JSON object will be merged onto this one.|
 |p_body| A JSON object to send the parameters. Only gor GET requests, these parameters are converted to URL query parameters, for others they are sent within the 'body' key.|
-|p_retrieveStatus| The status code is not returned in successfull calls. Set this parameter to `true` to get a `status` field in the response code. The field overrides if there exists another status field in the json, so be careful. Default is `false`.|
+|p_retrieveStatus| The status code is not returned in successful calls. Set this parameter to `true` to get a `status` field in the response code. The field overrides if there exists another status field in the json, so be careful. Default is `false`.|
 
 
 ## License
